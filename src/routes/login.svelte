@@ -1,10 +1,10 @@
-<!--<script context="module">
+<script context="module">
     export async function preload({ params }, { token }) {
         if (token) {
             this.redirect(302, `/`);
         }
     }
-</script>-->
+</script>
 
 <script>
     import { goto, stores } from '@sapper/app';
@@ -19,11 +19,10 @@
     async function submit(event) {
         const response = await post(`auth/login`, { username, password });
 
-        // TODO handle network errors
         errors = response.errors;
 
-        if (response.user) {
-            $session.user = response.user;
+        if (response.token) {
+            $session.token = response.token;
             goto('/');
         }
     }

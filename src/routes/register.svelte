@@ -18,7 +18,7 @@
         } else if (response.id) {
             successMessage = "Registration successful!"; // Успешная регистрация
             error = null; // Скрываем сообщение об ошибке
-            goto('/'); // Перенаправление на главную страницу
+            goto('login'); // Перенаправление на главную страницу
         }
     }
 </script>
